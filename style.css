@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Menggunakan font Montserrat */
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "nav section aside"
+        "footer footer footer";
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    background-color: #3C3D37; /* Background utama */
+    color: #ffffff; /* Warna teks default putih */
+}
+
+header {
+    grid-area: header;
+    background-color: #697565; /* Warna header */
+    color: #ffffff; /* Warna teks putih */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #444;
+}
+
+.img-profile {
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+}
+
+nav {
+    grid-area: nav;
+    background-color: #181C14; /* Warna nav */
+    padding: 20px;
+    text-align: left; /* Rata kiri */
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff; /* Warna teks putih */
+    display: block;
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+section {
+    grid-area: section;
+    padding: 20px;
+    border: 1px solid #444; /* Border gelap */
+    background-color: #181C14; /* Warna section */
+}
+
+aside {
+    grid-area: aside;
+    background-color: #3C3D37; /* Warna aside */
+    padding: 20px;
+    border: 1px solid #444; /* Border gelap */
+}
+
+footer {
+    grid-area: footer;
+    background-color: #697565; /* Warna footer */
+    color: #ffffff; /* Warna teks putih */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    border-top: 1px solid #444;
+}
+
+.website-name a {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff; /* Warna teks putih */
+}
+
+/* Layout untuk tablet landscape */
+@media (max-width: 1024px) {
+    body {
+        grid-template-areas:
+            "header header"
+            "nav section"
+            "aside aside"
+            "footer footer";
+        grid-template-columns: 25% 75%;
+    }
+}
+
+/* Layout untuk tablet portrait */
+@media (max-width: 768px) {
+    body {
+        grid-template-areas:
+            "header"
+            "nav"
+            "section"
+            "aside"
+            "footer";
+        grid-template-columns: 100%;
+    }
+}
+
+/* Layout untuk smartphone */
+@media (max-width: 480px) {
+    body {
+        grid-template-areas:
+            "header"
+            "nav"
+            "section"
+            "aside"
+            "footer";
+        grid-template-columns: 100%;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .img-profile {
+        width: 50px; /* Ukuran lebih kecil untuk smartphone */
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    nav ul {
+        padding: 0;
+    }
+
+    nav ul li a {
+        font-size: 1em;
+        padding: 8px 0;
+    }
+
+    section, aside, footer {
+        padding: 10px;
+        border: none;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
